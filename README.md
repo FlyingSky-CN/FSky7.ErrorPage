@@ -12,4 +12,4 @@ FSky7 项目所使用的 HTTP 的错误页面。
 
 ## 📝 Custom
 
-修改 `theme.html` 和 `errors.json` 以自定义。
+修改 `config.json` / `errors.json` / `theme.html` 以自定义。
