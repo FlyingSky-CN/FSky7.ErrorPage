@@ -1,6 +1,6 @@
 # 💡 FSky7.ErrorPage
 
-FSky7 项目所使用的 HTTP 的错误页面。
+FSky7 项目所使用的 HTTP 错误页面。
 
 ## 🧱 Build 
 
