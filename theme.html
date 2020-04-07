@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#ffffff">
+		<title>{{title}} - {{subtitle}}</title>
+		<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.2/css/mdui.min.css">
+		<link rel="shortcut icon" href="{{favicon}}">
+		<style>.mdui-overlay-show {opacity: 0!important}</style>
+	</head>
+	<body class="mdui-theme-accent-blue">
+        <div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0"> 
+            <div class="mdui-toolbar">
+                <a class="mdui-btn mdui-btn-icon" href="javascript:switchDarkMode();"><i class="mdui-icon material-icons">data_usage</i></a>
+                <a class="mdui-typo-title" href="/">{{subtitle}}</a>
+                <div class="mdui-toolbar-spacer"></div>
+                <a class="mdui-btn mdui-btn-icon" href="javascript:moreInfo();"><i class="mdui-icon material-icons">more_vert</i></a>
+            </div>
+        </div>
+		<div class="mdui-valign" style="height: 100vh">
+            <div class="mdui-container">
+                <i class="mdui-icon material-icons mdui-center" style="font-size: 256px;opacity: .54">{{icon}}</i>
+                <div class="mdui-text-center">
+                    <div class="mdui-typo-display-3-opacity">{{text}}</div>
+                </div>
+            </div>
+		</div>
+        <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.2/js/mdui.min.js"></script>
+        <script>
+            function moreInfo() {
+                var message = '{{reason}}',
+                    server = '{{server}}';
+                mdui.alert(message + '<br/><small>处理服务器 [ ' + server + ' ]</small>');
+            }
+        </script>
+        <script>
+            function onDarkMode() {
+                var body = $$('body'),
+                    appbar = $$('.mdui-appbar'),
+                    meta = document.getElementsByTagName('meta');
+                console.log('Dark mode on');
+                document.cookie = "dark=1;path=/;{{darkmode.domain}}";
+                body.addClass('mdui-theme-layout-dark');
+                body.removeClass('mdui-theme-accent-blue');
+		        body.addClass('mdui-theme-accent-light-blue');
+                meta["theme-color"].setAttribute('content','#303030');
+            }
+            function offDarkMode() {
+                var body = $$('body'),
+                    appbar = $$('.mdui-appbar'),
+                    meta = document.getElementsByTagName('meta');
+                console.log('Dark mode off');
+                document.cookie = "dark=0;path=/;{{darkmode.domain}}";
+                body.removeClass('mdui-theme-layout-dark');
+                body.removeClass('mdui-theme-accent-light-blue');
+                body.addClass('mdui-theme-accent-blue');
+                meta["theme-color"].setAttribute('content','#FFFFFF');
+            }
+        </script>
+        <script>
+            {{darkmode}}
+        </script>
+        {{addition}}
+    </body>
+</html>
