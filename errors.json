@@ -1,0 +1,51 @@
+[
+    {
+        "code": 401,
+        "title": "Unauthorized",
+        "icon": "block",
+        "text": "Unauthorized",
+        "reason": "当前请求需要用户验证。如果已经提交了验证信息，则代表着服务器验证已经拒绝了那些信息。"
+    },
+    {
+        "code": 403,
+        "title": "Forbidden",
+        "icon": "close",
+        "text": "Forbidden",
+        "reason": "服务器拒绝执行请求。"
+    },
+    {
+        "code": 404,
+        "title": "Not Found",
+        "icon": "link",
+        "text": "Not Found",
+        "reason": "请求失败，请求所希望得到的资源未被在服务器上发现。一般来说，出现这个错误的原因是服务器没有这个页面。"
+    },
+    {
+        "code": 500,
+        "title": "Server Error",
+        "icon": "report",
+        "text": "Server Error",
+        "reason": "服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来说，这个问题是服务器端的源代码出现错误造成的。"
+    },
+    {
+        "code": 502,
+        "title": "Bad Gateway",
+        "icon": "report",
+        "text": "Bad Gateway",
+        "reason": "作为网关或者代理工作的服务尝试执行请求时，从上游服务器接收到无效的响应。"
+    },
+    {
+        "code": 503,
+        "title": "Service Unavailable",
+        "icon": "pause",
+        "text": "Service Unavailable",
+        "reason": "由于临时的服务器维护、过载或者特殊原因，当前请求的服务已被暂停，请求无法被处理，这个状况或许是临时的。"
+    },
+    {
+        "code": 504,
+        "title": "Gateway Timeout",
+        "icon": "report",
+        "text": "Gateway Timeout",
+        "reason": "作为网关或者代理工作的服务尝试执行请求时，未能及时从上游服务器或者辅助服务器收到响应。"
+    }
+]
